@@ -1,0 +1,20 @@
+{
+  "name": "Payments Vue App",
+  "short_name": "PaymentsApp",
+  "description": "Aplicação Vue.js para gerenciamento de pagamentos",
+  "version": "1.0.0",
+  "author": "Desenvolvido para consumir a payments-api",
+  "homepage": "http://localhost:3000",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2c3e50",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
