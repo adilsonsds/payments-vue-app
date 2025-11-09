@@ -25,6 +25,9 @@ export const PaymentService = {
       if (filters.month) {
         params.append('month', filters.month.toString())
       }
+      if (filters.sortBy) {
+        params.append('sortBy', filters.sortBy)
+      }
 
       const queryString = params.toString()
       const url = queryString ? `/payments?${queryString}` : '/payments'

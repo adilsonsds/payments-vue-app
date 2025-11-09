@@ -5,7 +5,7 @@
         <router-link :to="getBackToSummaryRoute" class="breadcrumb-link">← Voltar ao Resumo</router-link>
         <h2>Lista de Pagamentos</h2>
       </div>
-      <router-link to="/create-payment" class="btn btn-primary">
+      <router-link :to="{ path: '/create-payment', query: { profileId: $route.query.profiles ? $route.query.profiles[0] : $route.query.profileId } }" class="btn btn-primary">
         Novo Pagamento
       </router-link>
     </div>
@@ -126,7 +126,7 @@
     <!-- Estado vazio -->
     <div v-else class="empty-state">
       <p>Nenhum pagamento encontrado.</p>
-      <router-link to="/create-payment" class="btn btn-primary">
+      <router-link :to="{ path: '/create-payment', query: { profileId: $route.query.profiles ? $route.query.profiles[0] : $route.query.profileId } }" class="btn btn-primary">
         Criar Primeiro Pagamento
       </router-link>
     </div>
@@ -329,7 +329,10 @@ export default {
       this.loading = true
       this.errorMessage = ''
       try {
-        const filterParams = {}
+        const filterParams = {
+          sortBy: 'CompletedAsc',
+          pageSize: 100,
+        }
 
         // Aplicar apenas filtros vindos da query string (navegação da home)
         const query = this.$route.query

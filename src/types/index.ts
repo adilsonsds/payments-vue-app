@@ -5,6 +5,7 @@ export interface PaymentFilters {
   profiles?: number[];
   year?: number;
   month?: number;
+  sortBy?: 'CreatedAtDesc' | 'CreatedAtAsc' | 'PaymentDateDesc' | 'PaymentDateAsc' | 'AmountDesc' | 'AmountAsc' | 'CompletedDesc' | 'CompletedAsc';
 }
 
 export interface PaymentSummaryFilters {
